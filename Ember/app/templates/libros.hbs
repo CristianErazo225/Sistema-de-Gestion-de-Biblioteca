@@ -1,0 +1,27 @@
+<h1>Lista de Libros</h1>
+
+<button {{on 'click' this.mostrarFormularioCrear}}>Agregar nuevo libro</button>
+
+<ul>
+  {{#each @model as |libro|}}
+    <li>
+      {{libro.titulo}} - {{libro.autor}} ({{libro.anio_publicacion}})
+
+      <!-- Botón para eliminar -->
+      <button 
+        {{on "click" (fn this.eliminarLibro libro.id_libro)}}
+        aria-label="Eliminar libro {{libro.titulo}}"
+      >
+        Eliminar
+      </button>
+
+      <!-- Botón para editar -->
+      <button 
+        {{on "click" (fn this.transitionToEdit libro.id_libro)}}
+        aria-label="Editar libro {{libro.titulo}}"
+      >
+        Editar
+      </button>
+    </li>
+  {{/each}}
+</ul>

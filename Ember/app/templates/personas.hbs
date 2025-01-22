@@ -1,0 +1,18 @@
+<h1>Lista de Personas</h1>
+
+<!-- Botón para agregar una nueva persona -->
+<button {{on 'click' this.mostrarFormularioCrear}}>Agregar nueva persona</button>
+
+<ul>
+  {{#each @model as |persona|}} <!-- Asegúrate de que `@model` contiene la lista de personas -->
+    <li>
+      {{persona.nombre}} {{persona.apellido}} - {{persona.email}}
+
+      <!-- Botones para editar y eliminar -->
+      <button {{on "click" (fn this.eliminarPersona persona.id_persona)}}>Eliminar</button>
+
+      <!-- Redirige a la ruta editar-persona pasando el id_persona -->
+      <button {{on "click" (fn this.transitionToEdit persona.id_persona)}}>Editar</button>
+    </li>
+  {{/each}}
+</ul>

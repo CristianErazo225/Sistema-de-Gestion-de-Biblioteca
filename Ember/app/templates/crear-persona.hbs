@@ -1,0 +1,8 @@
+<h2>Agregar nueva persona</h2>
+<form {{on 'submit' this.agregarPersona}}>
+  <!-- Campos para crear persona -->
+  <input type="text" placeholder="Nombre" value={{this.nombre}} {{on 'input' this.actualizarNombre}} />
+  <input type="text" placeholder="Apellido" value={{this.apellido}} {{on 'input' this.actualizarApellido}} />
+  <input type="email" placeholder="Email" value={{this.email}} {{on 'input' this.actualizarEmail}} />
+  <button type="submit">Crear persona</button>
+</form>

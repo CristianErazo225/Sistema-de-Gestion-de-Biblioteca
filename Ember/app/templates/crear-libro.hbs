@@ -1,0 +1,8 @@
+<h2>Agregar nuevo libro</h2>
+<form {{on 'submit' this.agregarNuevoLibro}}>
+  <!-- Campos para crear libro -->
+  <input type="text" placeholder="Título" value={{this.titulo}} {{on 'input' this.actualizarTitulo}} />
+  <input type="text" placeholder="Autor" value={{this.autor}} {{on 'input' this.actualizarAutor}} />
+  <input type="number" placeholder="Año de publicación" value={{this.anio_publicacion}} {{on 'input' this.actualizarAnioPublicacion}} />
+  <button type="submit">Crear libro</button>
+</form>
